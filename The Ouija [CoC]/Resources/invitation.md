@@ -1,3 +1,5 @@
+> [Game](../game.md)
+
 Querido amigo,
 
 Espero encuentres apropiada una invitación a una pequeña fiesta privada que tendrá ocasión en unas semanas.
@@ -8,5 +10,5 @@ El transporte corre a mi cargo, no debe ser preocupación para mis invitados. Un
 
 Espero impaciente vuestra visita.
 
-Atentamente,
+Atentamente,<br>
 Josh
