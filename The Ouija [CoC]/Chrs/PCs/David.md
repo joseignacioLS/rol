@@ -2,4 +2,4 @@
 
 # David
 
-<img src="../../Resources/Images/David.png" width="200">
+<img src="../../Resources/Images/Portraits/David10.png" width="200">
