@@ -2,7 +2,7 @@
 
 # Thurston
 
-<img src="../../Resources/Images/Portraits/magician.webp" width="200">
+<img src="../../Resources/Images/Portraits/Thurston.jpg" width="200">
 
 Es un reconocido medium en la sociedad aristócrata, famoso por sus predicciones sobre el futuro de las familias y los desposamientos. Sin embargo, es un farsante que se aprovecha de las necesidades de aquellos que buscan sus servicios para ganar respeto y dinero.
 

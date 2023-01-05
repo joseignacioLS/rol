@@ -33,8 +33,8 @@ La historia se situa a mediados del s.XIX, en una sociedad aristocrática. Emerg
 
 En un par de semanas se dará un acontecimiento con gran expectación dentro de la comunidad aristocrática, el paso de un cometa:
 
-<img src="./Resources/Images/CometInTheSky1.webp" width="200">
-<img src="./Resources/Images/CometInTheSky2.webp" width="200">
+<img src="./Resources/Images/Comet.png" width="200">
+<img src="./Resources/Images/SkyScar2.jpg" width="200">
 
 No solo es de importancia en el campo astronómico, sino que astrólogos, mediums y otros creyentes lo anuncian como un acercamiento entre mundos.
 
@@ -46,9 +46,14 @@ Realmente la presencia del cometa junto a las prácticas adecuadas darán lugar 
 
 - [Mansión](./Resources/Maps/mansion.md)
 
-# Eventos
+# Cronología
 
+- [Espera al carruaje](./Events/EsperaCarruaje.md)
+- [Viaje a la casa de campo](./Events/ViajeEnCarruaje.md)
+- [Recepción](./Events/Recepcion.md)
+- [Cena](./Events/Cena.md)
 - [Ritual](./Events/Ritual.md)
+- Más
 
 # Recursos
 
