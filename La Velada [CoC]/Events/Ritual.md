@@ -6,26 +6,52 @@
 
 Consiste en un intento de conexión con el más allá llevado a cabo por el [medium](../Chrs/NPCs/Thurston.md) usando un instrumento, un recuerdo y una ofrenda.
 
-## Requisitos
+__Requisitos__
 
-### Instrumento
+- Tablero de ouija
 
-Tablero de ouija
+Un medio para cruzar el velo
 
 <img src="../Resources/Images/Ouija.jpg" width="200">
 
-### Recuerdo
+- Recuerdo
+
+Una pertenecia del alma a contactar.
 
 <img src="../Resources/Images/Handkerchief.jpg" width="200">
 
-Pañuelo del [difunto](../Chrs/NPCs/Jorge.md) con sus iniciales y restos de sangre
-
-### Ofrenda
-
-<img src="../Resources/Images/Cup.jpg" width="200">
+- Ofrenda
 
 Sangre de los presentes recogida en la misma copa y situada en el centro del círculo.
 
-## Ejecución
+<img src="../Resources/Images/Cup.jpg" width="200">
 
-Los presentes se situan alrededor de una mesa en la que se encuentra el instrumento, el recuerdo y la ofrenda. Todos se dan la mano creando un circulo / semicirculo que no debe ser roto.
+
+## Diagrama de eventos
+
+## Diálogos
+
+Invocación:
+2 fases, primero teatro, y posteriormente una invocación
+```
+Antes de empezar, es importante que el ritual sea respetado
+
+Por la seguridad de todos, incluida la mia, no importa lo que suceda, el circulo debe estar cerrado o algo podría escapar. Mientras se mantenga así estamos seguros.
+
+Almas al otro lado del velo, separad las hebras que se interponen entre nuestros mundos para que Jorge pueda contactar con nosotros desde el otro lado.
+
+Oh, cometa visitante, heraldo del mas allá, cuchillo del velo, haz posible esta conexión.
+
+[El medium baja la cabeza y empieza a balbucear terminos ininteligibles, a los pocos segundos vuelve en sí y mira a Josh sin decir nada]
+```
+
+Preguntas de Josh:
+
+> Q: Hermano eres tu?
+> A: [La ouija no se mueve]
+
+> Q: Jorge?
+> A: [La ficha se desliza sin llegar a ninguna parte]
+
+> Q: Hermano, soy Josh, por favor, contesta
+> A: ZXEN

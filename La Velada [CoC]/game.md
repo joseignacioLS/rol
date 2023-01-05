@@ -27,6 +27,10 @@ Dos aristócratas son invitados por un [antiguo amigo](./Chrs/NPCs/Jorge.md) a u
 
 - [Virgilio](./Chrs/NPCs/Virgilio.md)
 
+### Otros
+
+- [Zxen](./Chrs/NPCs/Zxen.md)
+
 # Ambientación
 
 La historia se situa a mediados del s.XIX, en una sociedad aristocrática. Emergen oportunistas como los mediums que se aprovechan de las crédulas nuevas generaciones de nobles para ganarse la vida.
@@ -51,9 +55,9 @@ Realmente la presencia del cometa junto a las prácticas adecuadas darán lugar 
 - [Espera al carruaje](./Events/EsperaCarruaje.md)
 - [Viaje a la casa de campo](./Events/ViajeEnCarruaje.md)
 - [Recepción](./Events/Recepcion.md)
-- [Cena](./Events/Cena.md)
+- [La cena](./Events/Cena.md)
 - [Ritual](./Events/Ritual.md)
-- Más
+- [Noche](./Events/Noche.md)
 
 # Recursos
 
