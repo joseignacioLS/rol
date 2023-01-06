@@ -4,6 +4,14 @@
 
 <img src="../Resources/Images/Ritual.jpg" width="200">
 
+## Introducción
+
+Thurston se levanta a preparar el ritual mientras el servicio de Josn recoge los restos de la cena. La mesa queda despejada y la habitación en una penumbra rota por la tenue luz de las velas.
+
+Thurston coloca en el centro de la mesa un tablero con inscripciones extrañas, una ouija obviamente, y frente a el una copa metálica. Rapidamente utiliza un cuchillo para hacer una rapida incisión en su mano que aprieta para hacer caer una pequeña cantidad de sangre en la copa. Le cede el cuchillo a Josh, quien sin mucho miramiento repite la acción.
+
+## Resumen
+
 Consiste en un intento de conexión con el más allá llevado a cabo por el [medium](../Chrs/NPCs/Thurston.md) usando un instrumento, un recuerdo y una ofrenda.
 
 __Requisitos__

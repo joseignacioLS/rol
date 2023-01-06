@@ -57,13 +57,17 @@ Realmente la presencia del cometa junto a las prácticas adecuadas darán lugar 
 - [Recepción](./Events/Recepcion.md)
 - [La cena](./Events/Cena.md)
 - [Ritual](./Events/Ritual.md)
+- [El ultimo trago](./Events/UltimoTrago.md)
+- [Pesadilla](./Events/Pesadilla.md)
+- [El medium muerto](./Events/MediumMuerto.md)
+- [El cometa](./Events/Cometa.md)
 - [Noche](./Events/Noche.md)
 
 # Recursos
 
 ## Texto
 
-- [Invitation](./Resources//invitation.md)
+- [Invitation](./Resources/invitation.md)
 
 
 # Fuentes
