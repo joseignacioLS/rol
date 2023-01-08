@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/rol/static/css/main.f05f91c0.css",
-    "main.js": "/rol/static/js/main.be5584bf.js",
+    "main.css": "/rol/static/css/main.84fdd50b.css",
+    "main.js": "/rol/static/js/main.078ce4c6.js",
     "index.html": "/rol/index.html",
-    "main.f05f91c0.css.map": "/rol/static/css/main.f05f91c0.css.map",
-    "main.be5584bf.js.map": "/rol/static/js/main.be5584bf.js.map"
+    "main.84fdd50b.css.map": "/rol/static/css/main.84fdd50b.css.map",
+    "main.078ce4c6.js.map": "/rol/static/js/main.078ce4c6.js.map"
   },
   "entrypoints": [
-    "static/css/main.f05f91c0.css",
-    "static/js/main.be5584bf.js"
+    "static/css/main.84fdd50b.css",
+    "static/js/main.078ce4c6.js"
   ]
 }
