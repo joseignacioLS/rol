@@ -1,0 +1,129 @@
+main {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.builder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+
+  .editor,
+  .viewer {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+
+    text-align: left;
+    padding: 1rem;
+  }
+
+  .editor {
+    &__head {
+      display: flex;
+      gap: .5rem;
+
+      button {
+        padding: .5rem;
+        border-radius: 1rem;
+      }
+    }
+
+    .input {
+      width: 100%;
+      height: calc(100% - 3rem);
+
+      padding: 1rem;
+      background-color: rgb(72, 15, 94);
+      color: white;
+
+    }
+  }
+
+  .viewer {
+    max-width: 800px;
+    position: relative;
+
+    padding-bottom: 3rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    p {
+      margin-top: 1rem;
+      min-height: 1rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin-top: 1rem;
+      border-bottom: 1px solid white;
+    }
+
+    li {
+      margin-top: .5rem;
+      margin-left: 1rem;
+    }
+
+    .link {
+      color: rgb(5, 205, 255);
+      position: relative;
+      cursor: pointer;
+
+    }
+
+    .back {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .quote {
+      margin: 1rem 2rem;
+      background-color: rgb(31, 0, 28);
+      font-style: italic;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 1rem 0 1rem 0;
+    }
+  }
+}
+
+
+
+.download {
+  position: absolute;
+  bottom: 1rem;
+  right: 5rem;
+
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}

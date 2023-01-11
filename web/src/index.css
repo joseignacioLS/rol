@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(37, 35, 35);
+  color: white;
+}
+
+p {
+  line-height: 150%;
+}
