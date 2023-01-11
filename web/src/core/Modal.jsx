@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Modal.scss";
+import { ModalContext } from "./Context/ModalContext";
 
-const Modal = ({ modalData, setModalData }) => {
+const Modal = () => {
   const [inputValue, setInputValue] = React.useState("");
+  const { modalData, setModalData } = useContext(ModalContext);
   const handleEnd = (isAgree) => {
     if (!isAgree) {
       setModalData({
@@ -19,22 +21,26 @@ const Modal = ({ modalData, setModalData }) => {
   };
 
   return (
-    <div className="modal">
-      <p>{modalData.text}</p>
-      {modalData.type === "input" && (
-        <input
-          type="text"
-          value={inputValue}
-          onInput={(e) => {
-            setInputValue(e.currentTarget.value);
-          }}
-        ></input>
+    <>
+      {modalData.isShown && (
+        <div className="modal">
+          <p>{modalData.text}</p>
+          {modalData.type === "input" && (
+            <input
+              type="text"
+              value={inputValue}
+              onInput={(e) => {
+                setInputValue(e.currentTarget.value);
+              }}
+            ></input>
+          )}
+          <div>
+            <button onClick={() => handleEnd(true)}>Ok</button>
+            <button onClick={() => handleEnd()}>X</button>
+          </div>
+        </div>
       )}
-      <div>
-        <button onClick={() => handleEnd(true)}>Ok</button>
-        <button onClick={() => handleEnd()}>X</button>
-      </div>
-    </div>
+    </>
   );
 };
 

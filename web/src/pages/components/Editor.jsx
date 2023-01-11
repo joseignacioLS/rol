@@ -1,87 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { DataContext } from "../../core/Context/DataContext";
+import { ModalContext } from "../../core/Context/ModalContext";
+import EditorHeader from "./EditorHeader";
 
-function Editor({ setModalData }) {
-  const { data, dataDispatcher, path } = React.useContext(DataContext);
+function Editor() {
+  const { data, dataDispatcher, path } = useContext(DataContext);
+  const { setModalData } = useContext(ModalContext);
   return (
     <div className="editor">
-      <div className="editor__head">
-        <h1>{path.join("/")}</h1>
-        <button
-          onClick={() =>
-            setModalData({
-              isShown: true,
-              type: "input",
-              text: "Nombre del página",
-              outcome: (value) => {
-                dataDispatcher({
-                  type: "createSibling",
-                  payload: value,
-                });
-                dataDispatcher({
-                  type: "path",
-                  payload: [...path.slice(0, path.length - 1), value],
-                });
-              },
-            })
-          }
-        >
-          Add Sibling
-        </button>
-        {path[0] !== "Home" && (
-          <button
-            onClick={() =>
-              setModalData({
-                isShown: true,
-                type: "input",
-                text: "Nombre del página",
-                outcome: (value) => {
-                  dataDispatcher({
-                    type: "createChild",
-                    payload: value,
-                  });
-                  dataDispatcher({
-                    type: "path",
-                    payload: [...path, value],
-                  });
-                  //updateData([path[0], value], "", {});
-                  //changePage(path[0] + "/" + value);
-                },
-              })
-            }
-          >
-            Add Subpage
-          </button>
-        )}
-        {path[0] !== "Home" && (
-          <button
-            onClick={() =>
-              setModalData({
-                isShown: true,
-                type: "text",
-                text: "Confirma borrar la pagina",
-                outcome: () => {
-                  dataDispatcher({
-                    type: "delete",
-                    payload: {
-                      main: path[0],
-                      sub: path[1],
-                    },
-                  });
-                  dataDispatcher({
-                    type: "path",
-                    payload: ["Home", ""],
-                  });
-                  //changePage("Home");
-                  //deletePage(currentPage[0], currentPage[1]);
-                },
-              })
-            }
-          >
-            Delete
-          </button>
-        )}
-      </div>
+      <EditorHeader/>
       {data && (
         <textarea
           className="input"

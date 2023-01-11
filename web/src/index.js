@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import DataProvider from './core/Context/DataContext';
+import ModalProvider from './core/Context/ModalContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <DataProvider>
-      <App />
-    </DataProvider>
+    <ModalProvider>
+      <DataProvider>
+        <App />
+      </DataProvider>
+    </ModalProvider>
   </BrowserRouter>
 );
 

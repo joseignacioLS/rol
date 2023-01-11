@@ -8,7 +8,6 @@ const FALLBACK = { "Home": { "title": "Home", "raw": "" } }
 const reducer = (state, action) => {
   const { type, payload } = action
   const newState = JSON.parse(JSON.stringify(state))
-  let scene = newState.data[state.selected]
   switch (type) {
     case "select":
       newState.selected = payload

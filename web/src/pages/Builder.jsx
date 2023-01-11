@@ -5,18 +5,19 @@ import "./Builder.scss";
 import { DataContext } from "../core/Context/DataContext";
 
 function Builder({ canEdit, setModalData, gameTag }) {
-  const { gameData, listOfPages, path, dataDispatcher } = React.useContext(DataContext);
+  const { gameData, listOfPages, path, dataDispatcher } =
+    React.useContext(DataContext);
 
   React.useEffect(() => {
     dataDispatcher({
       type: "select",
       payload: gameTag,
     });
-  }, []);
+  }, [gameTag, dataDispatcher]);
 
   React.useEffect(() => {
     document.querySelector(".viewer")?.scrollTo(0, 0);
-  }, [...path]);
+  }, [path]);
 
   return (
     <>

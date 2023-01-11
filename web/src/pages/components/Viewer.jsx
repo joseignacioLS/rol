@@ -102,11 +102,11 @@ function Viewer() {
             </p>,
           ];
         default:
-          const [content, altStyle] = processContent(curr);
+          const [pContent, pStyle] = processContent(curr);
           return [
             ...acc,
-            <p key={`p${i}_${content}`} className={status} style={altStyle}>
-              {content}
+            <p key={`p${i}_${pContent}`} className={status} style={pStyle}>
+              {pContent}
             </p>,
           ];
       }
