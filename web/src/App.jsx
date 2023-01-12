@@ -24,56 +24,55 @@ function App() {
     <>
       <Builder canEdit={canEdit} />
       <Modal />
-      {canEdit && (
-        <div className='file-management'>
-          <button
-            className='btn download'
-            onClick={() => {
-              console.log(selected);
-              const dataToDownload = `data:text/json;charset=utf-8,${encodeURIComponent(
-                JSON.stringify(gameData)
-              )}`;
-              const link = document.createElement('a');
-              link.href = dataToDownload;
-              link.download = `${selected}.json`;
-              link.click();
-            }}>
-            Download
-          </button>
-          <div className='btn'>
-            <input
-              className='game-upload-input'
-              type='file'
-              accept='application/json'
-              onInput={(e) => {
-                const file = e.target.files[0];
-                let name = '';
 
-                if (file) {
-                  name = file.name.replace('.json', '');
-                  // faltaria validar la estructura del JSON
-                }
-                const reader = new FileReader();
+      <div className='file-management'>
+        <button
+          className='btn download'
+          onClick={() => {
+            console.log(selected);
+            const dataToDownload = `data:text/json;charset=utf-8,${encodeURIComponent(
+              JSON.stringify(gameData)
+            )}`;
+            const link = document.createElement('a');
+            link.href = dataToDownload;
+            link.download = `${selected}.json`;
+            link.click();
+          }}>
+          Download
+        </button>
+        <div className='btn'>
+          <input
+            className='game-upload-input'
+            type='file'
+            accept='application/json'
+            onInput={(e) => {
+              const file = e.target.files[0];
 
-                reader.onload = (() => {
-                  return (e) => {
-                    dataDispatcher({
-                      type: 'set',
-                      payload: {
-                        title: name,
-                        body: JSON.parse(e.target.result),
-                      },
-                    });
-                  };
-                })(file);
+              if (!file) {
+                return;
+              }
+              // faltaria validar la estructura del JSON
+              const name = file.name.replace('.json', '');
+              const reader = new FileReader();
 
-                reader.readAsText(file);
-              }}
-            />
-            <p>Load</p>
-          </div>
+              reader.onload = (() => {
+                return (e) => {
+                  dataDispatcher({
+                    type: 'set',
+                    payload: {
+                      title: name,
+                      body: JSON.parse(e.target.result),
+                    },
+                  });
+                };
+              })(file);
+
+              reader.readAsText(file);
+            }}
+          />
+          <p>Load</p>
         </div>
-      )}
+      </div>
     </>
   );
 }
