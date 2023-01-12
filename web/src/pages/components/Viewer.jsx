@@ -1,14 +1,17 @@
 import React from "react";
 import { DataContext } from "../../core/Context/DataContext";
+import P from "./TextComponents/P";
+import Image from "./TextComponents/Image";
 
 function Viewer() {
   const { data, path, dataDispatcher } = React.useContext(DataContext);
-  const processContent = (text) => {
-    const [content, ...rest] = text.split("|");
-    const style = {
-      textAlign: rest[0] || "",
-      fontSize: rest[1] ? rest[1] + "px" : "",
-    };
+  const processContent = (content, options) => {
+    const style = options
+      ? {
+          textAlign: options[0] || "left",
+          fontSize: options[1] ? options[1] + "px" : "inherit",
+        }
+      : {};
     const result = content.split(" ").map((part, i) => {
       const splitted = part.split("@");
       if (splitted.length === 1 || splitted[1].length === 0) {
@@ -16,22 +19,19 @@ function Viewer() {
       }
 
       return (
-        <>
-          <span
-            key={splitted[0]}
-            onClick={() =>
-              dataDispatcher({
-                type: "path",
-                payload: splitted[1].split("/"),
-              })
-            }
-            className="link"
-            data-link={splitted[1]}
-          >
-            {splitted[0].split("_").join(" ")}
-          </span>
-          <span key={"space_" + i}> </span>
-        </>
+        <span
+          key={splitted[0]}
+          onClick={() =>
+            dataDispatcher({
+              type: "path",
+              payload: splitted[1].split("/"),
+            })
+          }
+          className="link"
+          data-link={splitted[1]}
+        >
+          {splitted[0].split("_").join(" ") + " "}
+        </span>
       );
     });
     return [result, style];
@@ -40,32 +40,46 @@ function Viewer() {
   const processPage = (page) => {
     if (!page?.raw) return undefined;
     return page?.raw.split(/\r|\n/g).reduce((acc, curr, i) => {
-      const [key, ...rest] = curr.split(/ /);
-      let status = "";
-      const content = rest.join(" ");
-      const [processedContent, style] = processContent(content);
+      const regexKey = /^(!|#{1,3}|\$|\>|\-) /;
+      let key = curr.match(regexKey);
+
+      const regexOptions = /\|.+$/;
+      let options = curr.match(regexOptions);
+
+      let content = curr;
+      if (options) {
+        content = content.replace(options[0], "");
+        options = options[0].split("|").slice(1);
+      }
+      if (key) {
+        content = content.split("").slice(key.length).join("");
+        key = key[0].trim();
+      }
+      console.log(key)
+
+      const [processedContent, style] = processContent(content, options);
       switch (key) {
         case "!":
-          page.back = rest[0].split("/");
+          page.back = content.split("/");
           return acc;
         case "#":
           return [
             ...acc,
-            <h2 key={`h2${i}_${rest}`} style={style}>
+            <h2 key={`h2${i}_${content}`} style={style}>
               {processedContent}
             </h2>,
           ];
         case "##":
           return [
             ...acc,
-            <h3 key={`h3{i}_${rest}`} style={style}>
+            <h3 key={`h3{i}_${content}`} style={style}>
               {processedContent}
             </h3>,
           ];
         case "###":
           return [
             ...acc,
-            <h4 key={`h4${i}_${rest}`} style={style}>
+            <h4 key={`h4${i}_${content}`} style={style}>
               {processedContent}
             </h4>,
           ];
@@ -73,41 +87,28 @@ function Viewer() {
         case "-":
           return [
             ...acc,
-            <li key={`li${i}_${rest}`} style={style}>
+            <li key={`li${i}_${content}`} style={style}>
               {processedContent}
             </li>,
           ];
         case "$":
-          const [src, ...options] = rest[0].split("|");
+          const imageStyle = {
+            margin: options[0] === "center" ? "auto" : "",
+            width: options[1] ? options[1] + "%" : "200px",
+          };
           return [
             ...acc,
-            <>
-              <img
-                key={`img${i}`}
-                style={{
-                  display: "block",
-                  margin: options[0] === "center" ? "auto" : "",
-                  width: options[1] ? options[1] + "%" : "",
-                }}
-                src={src}
-                width="200"
-              />
-            </>,
+            <Image key={`img${i}`} src={content} style={imageStyle} />,
           ];
         case ">":
           return [
             ...acc,
-            <p key={`p${i}_${curr}`} className="quote">
-              {content}
-            </p>,
+            <P key={`p${i}_${curr}`} content={processedContent} cssClass="quote" />,
           ];
         default:
-          const [pContent, pStyle] = processContent(curr);
           return [
             ...acc,
-            <p key={`p${i}_${pContent}`} className={status} style={pStyle}>
-              {pContent}
-            </p>,
+            <P key={`p${i}_${processedContent}`} content={processedContent} style={style} />,
           ];
       }
     }, []);
