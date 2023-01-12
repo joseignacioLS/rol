@@ -1,8 +1,13 @@
-import React from "react";
+import React from 'react';
 
-const P = ({ content, style = {}, cssClass }) => {
+const P = ({ content, style = {}, className }) => {
   return (
-    <p className={cssClass} style={style}>
+    <p
+      className={className}
+      style={{
+        fontSize: style.size,
+        textAlign: style.align,
+      }}>
       {content}
     </p>
   );
