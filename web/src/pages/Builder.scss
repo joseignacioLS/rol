@@ -72,10 +72,13 @@ main {
 
       h1 {
         flex: 1;
+        max-width: calc(100% - 50px);
+        overflow: hidden;
       }
 
       span {
-        cursor: pointer
+        cursor: pointer;
+        width: 50px;
       }
     }
 
